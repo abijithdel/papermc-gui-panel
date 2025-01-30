@@ -12,6 +12,13 @@
     --color: white;
     --red: red;
     --hover: aqua;
+    --green: rgb(12, 194, 12);
+    --gray: gray;
+    --yellow: yellow;
+}
+
+.red{
+    color: var(--red);
 }
 
 body{
@@ -72,4 +79,142 @@ header nav .title h1{
 
 header nav .title h1::first-letter{
     color: var(--red);
+}
+
+/* console-page */
+
+.console-page{
+    height: 80vh;
+    width: 100%;
+    display: flex;
+}
+
+.console-page .main{
+    width: 70%;
+    height: 100%;
+}
+
+.console-page .main .controls{
+    height: auto;
+    width: 100%;
+    padding: 20px;
+}
+
+.console-page .main .controls button{
+    margin-left: 20px;
+}
+
+.console-page .main .controls .start-btn{
+    height: 39px;
+    width: 90px;
+    background-color: var(--green);
+    border: none;
+    color: var(--color);
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.console-page .main .controls .re-start-btn{
+    height: 39px;
+    width: 90px;
+    background-color: var(--gray);
+    border: none;
+    color: var(--color);
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.console-page .main .controls .stop-btn{
+    height: 39px;
+    width: 90px;
+    background-color: var(--yellow);
+    border: none;
+    color: black;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.console-page .main .controls .kill-btn{
+    height: 39px;
+    width: 90px;
+    background-color: var(--red);
+    border: none;
+    color: black;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.console-page .main .console{
+    background-color: black;
+    height: 90%;
+    width: 100%;
+    margin-left: 20px;
+    border-radius: 10px;
+    padding: 10px;
+    overflow: auto;
+    box-shadow: rgba(32, 32, 32, 0.2) 0px 8px 24px;
+}
+
+.console-page .main .input{
+    width: 100%;
+    /* padding: 10px; */
+    padding: 5px;
+    position: relative;
+    bottom: 0;
+    padding-left: 20px;
+}
+
+.console-page .main .input input{
+    height: 38px;
+    width: 90%;
+    background-color: var(--BG2);
+    outline: none;
+    border: none;
+    border-radius: 8px;
+    color: var(--color);
+    padding-left: 20px;
+    box-shadow: rgba(32, 32, 32, 0.2) 0px 8px 24px;
+}
+
+.console-page .main .input button{
+    width: 9%;
+    height: 37px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    box-shadow: rgba(32, 32, 32, 0.2) 0px 8px 24px;
+}
+
+.console-page .analytics{
+    width: 29%;
+    height: 100%;
+    padding-top: 90px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.console-page .analytics .server{
+    background-color: var(--BG2);
+    width: 80%;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.console-page .analytics .cpu{
+    background-color: var(--BG2);
+    box-shadow: rgba(32, 32, 32, 0.2) 0px 8px 24px;
+    width: 80%;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+.console-page .analytics .ram{
+    background-color: var(--BG2);
+    box-shadow: rgba(32, 32, 32, 0.2) 0px 8px 24px;
+    width: 80%;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 10px;
 }

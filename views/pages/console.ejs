@@ -1,1 +1,34 @@
 <title>Console</title>
+<section class="console-page">
+    <div class="main">
+        <div class="controls">
+            <button class="start-btn">Start</button>
+            <button class="re-start-btn">Restart</button>
+            <button class="stop-btn">Stop</button>
+            <button class="kill-btn">Kill</button>
+        </div>
+        <div class="console">
+            <!-- SERVER LOG -->
+        </div>
+        <div class="input">
+            <input type="text" id="cmd"> <button>
+                <i class="bi bi-send-check-fill"></i>
+                Send
+            </button>
+        </div>
+    </div>
+    <div class="analytics">
+        <div class="server">
+            <h4>Server</h4>
+            <p>Status: <span class="red" id="status">offline</span></p>
+            <p id="ip">0.0.0.0:52556</p>
+            <p>players: 0</p>
+        </div>
+        <div class="cpu">
+            <i class="bi bi-cpu"></i> CPU: <span id="cpu">100</span>%
+        </div>
+        <div class="ram">
+            <i class="bi bi-memory"></i> RAM: <span id="ram">100</span>%
+        </div>
+    </div>
+</section>

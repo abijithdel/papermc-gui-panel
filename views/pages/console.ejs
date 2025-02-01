@@ -2,16 +2,18 @@
 <section class="console-page">
     <div class="main">
         <div class="controls">
-            <button class="start-btn">Start</button>
-            <button class="re-start-btn">Restart</button>
-            <button class="stop-btn">Stop</button>
-            <button class="kill-btn">Kill</button>
+            <button class="start-btn" id="start-btn">Start</button>
+            <button class="re-start-btn" id="re-start-btn">Restart</button>
+            <button class="stop-btn" id="stop-btn">Stop</button>
+            <!-- <button class="kill-btn">Kill</button> -->
         </div>
-        <div class="console">
+        <div class="console" id="console">
+            <p style="color: gray;">Server log</p>
             <!-- SERVER LOG -->
         </div>
         <div class="input">
-            <input type="text" id="cmd"> <button>
+            <input type="text" id="cmd" placeholder="CMD.!"> 
+            <button>
                 <i class="bi bi-send-check-fill"></i>
                 Send
             </button>
@@ -21,8 +23,8 @@
         <div class="server">
             <h4>Server</h4>
             <p>Status: <span class="red" id="status">offline</span></p>
-            <p id="ip">0.0.0.0:52556</p>
-            <p>players: 0</p>
+            <p id="ip"><%= serverIP %>:<%= mcport %></p>
+            <p>players: <span id="players"></span></p>
         </div>
         <div class="cpu">
             <i class="bi bi-cpu"></i> CPU: <span id="cpu">100</span>%
@@ -32,3 +34,6 @@
         </div>
     </div>
 </section>
+<script src="/socket.io/socket.io.js"></script>
+<script src="js/controls_btns.js"></script>
+<script src="js/console.js"></script>

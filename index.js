@@ -11,10 +11,12 @@ const io = new Server(server)
 app.use(express.static('public'))
 app.use(expressLayouts)
 app.set('layout', './layouts/layout')
-app.set('view engine','ejs')
+app.set('view engine','ejs')  
 
 const IndexRouter = require('./router/index')
-app.use('/',IndexRouter)
+const ControlsRouter = require('./router/controls_apis')
+app.use('/',IndexRouter(io))
+app.use('/controls', ControlsRouter(io))
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3001;
 server.listen(PORT,()=> console.log(`http://localhost:${PORT}/`))

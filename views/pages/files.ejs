@@ -1,0 +1,22 @@
+<title>Files</title>
+<section class="files-page">
+    <h1>Files</h1>
+    <% for(let x in files) { %>
+    <div class="file" onclick="goToDir('<%= files[x].item %>','<%= files[x].file %>')">
+        <div class="icon">
+            <% if(files[x].file) { %>
+                <i class="bi bi-file-earmark-text"></i>
+            <% } else { %>
+                <i class="bi bi-folder"></i>
+            <% } %>
+        </div>
+        <div class="name">
+            <%= files[x].item %>
+        </div>
+        <div class="menu">
+            <i class="bi bi-three-dots-vertical"></i>
+        </div>
+    </div>
+    <% } %>
+</section>
+<script src="/js/file.js"></script>

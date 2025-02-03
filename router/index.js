@@ -22,7 +22,7 @@ module.exports = function (io) {
         if (portLine) {
           const port = portLine.split('=')[1].trim();
           mcport = port
-          console.log('Minecraft Server Port:', port);
+          // console.log('Minecraft Server Port:', port);
         } else {
           console.log('Port not found in server.properties');
         }

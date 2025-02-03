@@ -11,12 +11,16 @@ const io = new Server(server)
 app.use(express.static('public'))
 app.use(expressLayouts)
 app.set('layout', './layouts/layout')
-app.set('view engine','ejs')  
+app.set('view engine','ejs')
+app.use(express.json())
+app.use(express.urlencoded({ extended: false }))
 
 const IndexRouter = require('./router/index')
 const ControlsRouter = require('./router/controls_apis')
+const FilesRouter = require('./router/files')
 app.use('/',IndexRouter(io))
 app.use('/controls', ControlsRouter(io))
+app.use('/files', FilesRouter)
 
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3000;
 server.listen(PORT,()=> console.log(`http://localhost:${PORT}/`))

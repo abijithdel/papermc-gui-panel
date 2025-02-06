@@ -2,6 +2,7 @@ const start_btn = document.getElementById('start-btn')
 const re_start_btn = document.getElementById('re-start-btn')
 const stop_btn = document.getElementById('stop-btn')
 
+
 start_btn.addEventListener('click', () => {
     start_btn.disabled = true
     start_btn.style.backgroundColor = 'green'
@@ -27,3 +28,4 @@ stop_btn.addEventListener('click', () => {
     .then(data => console.log(data))
     .catch(err => console.log(err))
 })
+

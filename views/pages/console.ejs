@@ -9,11 +9,12 @@
         </div>
         <div class="console" id="console">
             <p style="color: gray;">Server log</p>
+            <p id="runngin" style="display: none;">Running..!</p>
             <!-- SERVER LOG -->
         </div>
         <div class="input">
             <input type="text" id="cmd" placeholder="CMD.!"> 
-            <button>
+            <button onclick="sendcmd()">
                 <i class="bi bi-send-check-fill"></i>
                 Send
             </button>

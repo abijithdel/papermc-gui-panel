@@ -46,7 +46,7 @@ module.exports = function (io) {
           // }
         });
     }
-    setInterval(getPlayerCount,10000)
+    setInterval(getPlayerCount,1000)
     res.render('pages/console', { mcport, serverIP })
   })
   return route;

@@ -63,5 +63,12 @@ module.exports = function(io) {
         }
     })
 
+    route.post('/usecmd', (req,res) => {
+        const { cmd } = req.body;
+        if(server){
+            server.stdin.write(cmd + "\n");
+        }
+    })
+
     return route;
 }

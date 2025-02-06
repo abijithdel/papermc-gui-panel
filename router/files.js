@@ -52,7 +52,7 @@ route.get('/file/:path', (req,res) => {
         if(err){
             return console.log(err)
         }
-        res.render('pages/sp_file', { file:data, filename, serverpath })
+        res.render('pages/sp_file', { file:data, filename, serverpath, message:false })
     })
 })
 
@@ -63,7 +63,7 @@ route.post('/save-file', (req,res) => {
         if(err){
             return console.log(err)
         }
-        res.render('pages/sp_file', { file , filename, serverpath:path })
+        res.render('pages/sp_file', { file , filename, serverpath:path, message:true  })
     })
 })
 

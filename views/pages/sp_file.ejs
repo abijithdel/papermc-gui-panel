@@ -1,6 +1,11 @@
 <title><%= filename %></title>
 <section class="sp_file_page">
     <h1><%= filename %>e</h1>
+    <% if(message) {%>
+    <div class="message">
+        <p>Successfully Save File</p>
+    </div>
+    <% } %>
     <form action="/files/save-file" method="post">
         <textarea name="file"><%= file %></textarea>
         <input type="text" name="path" value="<%= serverpath %>" style="display: none;">

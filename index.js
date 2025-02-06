@@ -18,9 +18,15 @@ app.use(express.urlencoded({ extended: false }))
 const IndexRouter = require('./router/index')
 const ControlsRouter = require('./router/controls_apis')
 const FilesRouter = require('./router/files')
+const NetworkRouter = require('./router/network')
+const StartupRouter = require('./router/startup')
+
 app.use('/',IndexRouter(io))
 app.use('/controls', ControlsRouter(io))
 app.use('/files', FilesRouter)
+app.use('/network', NetworkRouter)
+app.use('/startup', StartupRouter)
+
 
 const PORT = process.env.PORT || 3000;
 server.listen(PORT,()=> console.log(`http://localhost:${PORT}/`))

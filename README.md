@@ -14,7 +14,7 @@ This guide will help you set up and run the Minecraft Server Panel Web.
 
 ```sh
 # Using Git (Recommended)
-git clone <repo-url>
+git clone https://github.com/abijithdel/papermc-gui-panel.git
 
 # Or download the ZIP file and extract it manually
 ```
@@ -22,7 +22,7 @@ git clone <repo-url>
 ### 2. Navigate to the Project Directory
 
 ```sh
-cd <project-folder>
+cd papermc-gui-panel
 ```
 
 ### 3. Install Dependencies

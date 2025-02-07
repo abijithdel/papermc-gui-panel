@@ -90,6 +90,15 @@ header nav .title h1{
     font-size: 30px;
 }
 
+header nav .title span{
+    margin-bottom: 20px;
+    color: rgb(14, 162, 221);
+    border: 1px solid white;
+    border-radius: 8px;
+    padding: 2px;
+    margin-left: 5px;
+}
+
 header nav .title h1::first-letter{
     color: var(--red);
 }
@@ -97,7 +106,7 @@ header nav .title h1::first-letter{
 /* console-page */
 
 .console-page{
-    height: 80vh;
+    height: 70vh;
     width: 100%;
     display: flex;
 }
@@ -437,3 +446,14 @@ header nav .title h1::first-letter{
     margin-top: 10px;
 }
 
+/* Footer */
+
+footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    color: white;
+    text-align: center;
+    margin-bottom: 6px;
+}

@@ -1,0 +1,17 @@
+<title>Settings</title>
+
+<% if(message) { %>
+<div class="message">
+  <p>Successfully Uploaded</p>
+</div>
+<% } %>
+
+<section class="settings-page">
+  <div class="jar-file">
+    <h2>Upload Jar File</h2>
+    <form action="/settings" method="POST" enctype="multipart/form-data">
+      <input type="file" name="file" />
+      <button type="submit">Upload</button>
+    </form>
+  </div>
+</section>

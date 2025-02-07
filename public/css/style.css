@@ -21,6 +21,19 @@
     color: var(--red);
 }
 
+.message{
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.message p{
+    background-color: rgba(6, 255, 6, 0.459);
+    padding: 10px;
+    text-align: center;
+    border: 1px solid var(--green);
+    margin: 10px;
+    border-radius: 10px;
+}
 body{
     background-color: var(--mainBG);
     color: var(--color);
@@ -387,3 +400,40 @@ header nav .title h1::first-letter{
     background-color: var(--mainBG);
     color: var(--color);
 }
+
+.settings-page{
+    height: 80vh;
+    width: 100%;
+    padding: 20px;
+}
+
+.settings-page .jar-file{
+    padding: 10px;
+    height: 60%;
+    width: 50%;
+    background-color: var(--BG2);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.settings-page .jar-file form{
+    display: flex;
+    flex-direction: column;
+}
+
+.settings-page .jar-file form button{
+    height: 35px;
+    width: 90px;
+    border-radius: 8px;
+    border: none;
+    background-color: var(--hover);
+    margin-top: 10px;
+}
+
+.settings-page .jar-file form input{
+    margin-top: 10px;
+}
+

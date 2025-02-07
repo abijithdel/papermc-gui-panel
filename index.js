@@ -20,12 +20,14 @@ const ControlsRouter = require('./router/controls_apis')
 const FilesRouter = require('./router/files')
 const NetworkRouter = require('./router/network')
 const StartupRouter = require('./router/startup')
+const SettingsRouter = require('./router/settings')
 
 app.use('/',IndexRouter(io))
 app.use('/controls', ControlsRouter(io))
 app.use('/files', FilesRouter)
 app.use('/network', NetworkRouter)
 app.use('/startup', StartupRouter)
+app.use('/settings', SettingsRouter)
 
 
 const PORT = process.env.PORT || 3000;

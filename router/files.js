@@ -67,4 +67,56 @@ route.post('/save-file', (req,res) => {
     })
 })
 
+route.post('/createfile', (req,res) => {
+    const { path, type, name } = req.body;
+    const basepath = dirname(__dirname)
+    const serverpath = join(basepath,'server')
+    const inpath = path.replace(/\$/g,'/')
+    const filepath = inpath.replace('files','')
+    const newfilepath = join(serverpath,filepath,name)
+    try {
+        if(fs.existsSync(newfilepath)){
+            return res.json({status:false,message:`File already exists. ${name}`})
+        }
+        
+        if(type === 'file'){
+            fs.writeFileSync(newfilepath, `# file. ${name}`);
+        } else if(type === 'folder'){
+            fs.mkdirSync(newfilepath)
+        }else{
+            return res.json({status:false,message:'type error'})
+        }
+
+        res.json({status:true,message:`${type} created successfully!`})
+    } catch (error) {
+        console.log(error)
+        res.json({status:false,message:error.message})
+    }
+})
+
+route.post('/delete-item', (req,res) => {
+    const { isfile, name, urlpath } = req.body;
+    const base = dirname(__dirname)
+    const server = join(base,'server')
+    const UrlPath = urlpath.replace('/files','')
+    const finel = UrlPath.replace(/\$/g,'/')
+    const itemdir = join(server,finel,name)
+    try {
+        if(!fs.existsSync(itemdir)){
+            return res.json({status:false,message:'No File or Dir'})
+        }
+
+        if(isfile){
+            fs.unlinkSync(itemdir)
+            return res.json({ status:true, message:`Delete File (${name}) successfully`})
+        }
+
+        fs.rmSync(itemdir, { recursive: true })
+        res.json({status:true,message:`Delete Folder (${name}) successfully`})
+    } catch (error) {
+        res.json({status:false,message:error.message})
+        console.log(error)
+    }
+})
+
 module.exports = route;

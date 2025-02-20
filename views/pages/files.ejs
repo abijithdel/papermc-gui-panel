@@ -1,22 +1,49 @@
 <title>Files</title>
 <section class="files-page">
     <h1>Files</h1>
-    <% for(let x in files) { %>
-    <div class="file" onclick="goToDir('<%= files[x].item %>','<%= files[x].file %>')">
-        <div class="icon">
-            <% if(files[x].file) { %>
-                <i class="bi bi-file-earmark-text"></i>
-            <% } else { %>
-                <i class="bi bi-folder"></i>
-            <% } %>
-        </div>
-        <div class="name">
-            <%= files[x].item %>
-        </div>
-        <div class="menu">
-            <i class="bi bi-three-dots-vertical"></i>
-        </div>
+    <div class="btns">
+        <button onclick="create('file')">Create File</button>
+        <button onclick="create('folder')">Create Folder</button>
+        <button>Upload File</button>
     </div>
-    <% } %>
+    <div id="message">
+        <!-- <p>Server Message</p> -->
+    </div>
+    <% for(let x in files) { %>
+        <div class="file">
+            <div class="icon" onclick="goToDir('<%= files[x].item %>','<%= files[x].file %>')" >
+                <% if(files[x].file) { %>
+                    <i class="bi bi-file-earmark-text"></i>
+                    <% } else { %>
+                        <i class="bi bi-folder"></i>
+                        <% } %>
+            </div>
+            <div class="name" onclick="goToDir('<%= files[x].item %>','<%= files[x].file %>')">
+                <%= files[x].item %>
+            </div>
+            <div class="menu" onclick="menu('<%= files[x].item %>','<%= files[x].file %>')">
+                <i class="bi bi-three-dots-vertical"></i>
+            </div>
+        </div>
+        <% } %>
 </section>
+
+<div class="createnew" id="createnew">
+    <div class="new">
+        <button class="close">X</button>
+        <h3>Enter Name</h3>
+        <input type="text" placeholder="Enter Name.." id="name">
+        <button onclick="savename()">Save</button>
+    </div>
+</div>
+
+<div class="main-menu">
+    <div class="close" onclick="closemenu()">
+        X
+    </div>
+    <div class="btns">
+        <button style="background-color: red;" onclick="deleteitem()">Delete</button>
+    </div>
+</div>
+
 <script src="/js/file.js"></script>

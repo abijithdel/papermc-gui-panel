@@ -7,9 +7,14 @@ const start_BTN = document.getElementById('start-btn')
 
 const socket = io();
 
+function removeAnsiCodes(text) {
+    return text.replace(/\x1B(?:[@-Z\\-_]|\[[0-?]*[ -/]*[@-~])/g, '');
+}
+
 socket.on('server-log', log => {
     const p = document.createElement('p')
-    p.innerHTML = log
+    const clearlog = removeAnsiCodes(log)
+    p.innerHTML = clearlog
     ServerConsole.append(p)
 })
 
@@ -33,6 +38,10 @@ socket.on('players', players => {
 })
 
 function sendcmd(){
+    const p = document.createElement('p')
+    p.innerHTML = cmdinput.value;
+    p.style.color = 'yellow'
+    ServerConsole.append(p)
     fetch('/controls/usecmd',
         {
             method: 'POST',
